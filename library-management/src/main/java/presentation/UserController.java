@@ -1,6 +1,6 @@
 package presentation;
 
-import service.UserService;
+import service.user.UserService;
 import utility.components.TextInput;
 import utility.form.Form;
 
