@@ -1,7 +1,7 @@
 package service.user;
 
-import entity.User;
-import entity.UserRepository;
+import entity.user.User;
+import entity.user.UserRepository;
 import exception.InvalidCredentialsException;
 
 public class MemoryUserService implements UserService {

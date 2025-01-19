@@ -1,5 +1,7 @@
 package entity;
 
+import entity.libraryitem.Book;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;

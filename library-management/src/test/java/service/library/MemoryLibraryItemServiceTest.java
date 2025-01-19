@@ -1,8 +1,8 @@
 package service.library;
 
-import entity.Book;
-import entity.LibraryItem;
-import entity.LibraryItemRepository;
+import entity.libraryitem.Book;
+import entity.libraryitem.LibraryItem;
+import entity.libraryitem.LibraryItemRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

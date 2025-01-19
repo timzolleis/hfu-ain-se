@@ -1,7 +1,7 @@
 package service.person;
 
-import entity.Person;
-import entity.PersonRepository;
+import entity.person.Person;
+import entity.person.PersonRepository;
 import exception.PersonNotFoundException;
 
 import java.util.Date;

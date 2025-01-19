@@ -1,4 +1,4 @@
-package entity;
+package entity.libraryitem;
 
 public interface LibraryItem {
     int getId();

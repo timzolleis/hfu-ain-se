@@ -1,6 +1,6 @@
 package service;
 
-import entity.User;
+import entity.user.User;
 import exception.InvalidCredentialsException;
 import exception.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;

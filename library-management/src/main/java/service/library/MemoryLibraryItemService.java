@@ -1,7 +1,8 @@
 package service.library;
 
-import entity.LibraryItem;
-import entity.LibraryItemRepository;
+import entity.libraryitem.LibraryItem;
+import entity.libraryitem.LibraryItemRepository;
+import exception.LibraryItemNotFoundException;
 
 public class MemoryLibraryItemService implements LibraryItemService {
 
@@ -9,6 +10,11 @@ public class MemoryLibraryItemService implements LibraryItemService {
 
     public MemoryLibraryItemService(LibraryItemRepository libraryItemRepository) {
         this.libraryItemRepository = libraryItemRepository;
+    }
+
+    @Override
+    public LibraryItem findLibraryItemById(int id) {
+        return libraryItemRepository.findLibraryItemById(id).orElseThrow(() -> new LibraryItemNotFoundException("Library item not found"));
     }
 
     @Override

@@ -1,6 +1,6 @@
-package entity;
+package entity.libraryitem;
 
-public class Book implements LibraryItem {
+public class Magazine implements LibraryItem {
     private int id;
     private String author;
     private String name;
