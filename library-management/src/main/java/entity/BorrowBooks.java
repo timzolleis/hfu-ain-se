@@ -7,11 +7,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BorrowBooks implements BorrowBooksInterface{
+public class BorrowBooks {
 
-    private final Map<Integer, Date> BorrowedBooks = new HashMap<>();
+    // Map mit ID als Schlüssel und BorrowedBook als Wert
+    private final Map<Integer, BorrowedBook> BorrowedBooks = new HashMap<>();
+    private int ID = 0;
 
-    private Date validuntil(){
+    // Ablaufdatum berechnen (14 Tage ab heute)
+    private Date validuntil() {
         Date today = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(today);
@@ -19,27 +22,42 @@ public class BorrowBooks implements BorrowBooksInterface{
         return calendar.getTime();
     }
 
-    @Override
-    public void addBorrowedBook(final Book book) {//hinzufügen
-        Date validuntil = validuntil();
-        BorrowedBooks.put(book.getId(), validuntil);
+    // ID eines Buches ermitteln
+    private int getID(Book book) {
+        for (Map.Entry<Integer, BorrowedBook> entry : BorrowedBooks.entrySet()) {
+            if (entry.getValue().getBook().equals(book)) {
+                return entry.getKey();
+            }
+        }
+        return -1; // Falls das Buch nicht gefunden wird
     }
 
-    @Override
-    public void removeBorrowedBook(final Book book) { //entfernen
-        BorrowedBooks.remove(book.getId(),book);
+    // Buch hinzufügen und Ablaufdatum zuweisen
+    public void addBorrowedBook(final Book book) {
+        ID++;
+        Date dueDate = validuntil(); // Ablaufdatum berechnen
+        BorrowedBooks.put(ID, new BorrowedBook(book, dueDate));
     }
 
-    @Override
-    public void extendBorrowedBook(final Book book) { //verlängern
-        BorrowedBooks.remove(book.getId(), book);
-        Date validuntil = validuntil();
-        BorrowedBooks.put(book.getId(), validuntil);
+    // Buch entfernen
+    public void removeBorrowedBook(final Book book) {
+        int bookID = getID(book);
+        if (bookID != -1) {
+            BorrowedBooks.remove(bookID);
+        }
     }
 
+    // Ablaufdatum verlängern (erneut 14 Tage)
+    public void extendBorrowedBook(final Book book) {
+        int bookID = getID(book);
+        if (bookID != -1) {
+            BorrowedBook borrowedBook = BorrowedBooks.get(bookID);
+            borrowedBook.setDueDate(validuntil()); // Ablaufdatum aktualisieren
+        }
+    }
 
-    @Override
-    public Map<Integer, Date> getBorrowedBooks() { //Liste der Bücher
-        return Map.of();
+    // Alle ausgeliehenen Bücher zurückgeben
+    public Map<Integer, BorrowedBook> getBorrowedBooks() {
+        return new HashMap<>(BorrowedBooks); // Kopie der Map zurückgeben
     }
 }
