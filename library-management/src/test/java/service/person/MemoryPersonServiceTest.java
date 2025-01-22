@@ -15,7 +15,7 @@ class MemoryPersonServiceTest {
 
     @BeforeEach
     void setUp() {
-        this.personService = new MemoryPersonService(new PersonRepository());
+        this.personService = new MemoryPersonService();
     }
 
     @Test

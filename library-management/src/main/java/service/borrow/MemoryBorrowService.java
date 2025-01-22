@@ -9,6 +9,7 @@ public class MemoryBorrowService implements BorrowService {
     private final Map<Integer, BorrowedItem> borrowedItems = new HashMap<>();
 
     private final Date calculateDueDate(final Date baseDate, final int daysToAdd) {
+
         final Calendar calendar = Calendar.getInstance();
         calendar.setTime(baseDate);
         calendar.add(Calendar.DATE, daysToAdd);

@@ -14,7 +14,7 @@ class MemoryLibraryItemServiceTest {
 
     @BeforeEach
     void setUp() {
-        this.libraryItemService = new MemoryLibraryItemService(new LibraryItemRepository());
+        this.libraryItemService = new MemoryLibraryItemService();
     }
 
     @Test

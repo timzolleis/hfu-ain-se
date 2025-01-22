@@ -1,9 +1,4 @@
-import entity.libraryitem.LibraryItemRepository;
-import presentation.ApplicationController;
-import presentation.LibraryItemController;
 import presentation.MainController;
-import service.library.LibraryItemService;
-import service.library.MemoryLibraryItemService;
 
 public class LibraryManagement {
 

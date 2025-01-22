@@ -22,7 +22,7 @@ public class MainController {
         commandForm.addInput(commandInput);
         Map<String, String> result = commandForm.run();
         String command = result.get("command");
-        handleCommand(command);
+        handleCommand(command.toLowerCase());
     }
 
     private void handleCommand(String command){
