@@ -1,4 +1,4 @@
-package entity;
+package entity.person;
 
 import java.util.HashMap;
 import java.util.List;

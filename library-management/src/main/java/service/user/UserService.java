@@ -1,6 +1,6 @@
 package service.user;
 
-import entity.User;
+import entity.user.User;
 
 public interface UserService {
     void login(final String username, final String password);

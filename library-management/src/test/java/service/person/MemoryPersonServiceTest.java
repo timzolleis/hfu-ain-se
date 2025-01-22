@@ -1,7 +1,7 @@
 package service.person;
 
-import entity.Person;
-import entity.PersonRepository;
+import entity.person.Person;
+import entity.person.PersonRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

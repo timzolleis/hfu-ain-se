@@ -1,6 +1,6 @@
 package service.person;
 
-import entity.Person;
+import entity.person.Person;
 
 import java.util.Date;
 import java.util.List;

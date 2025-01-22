@@ -1,4 +1,4 @@
-package entity;
+package entity.user;
 
 import exception.UserNotFoundException;
 
