@@ -10,8 +10,8 @@ public class MemoryLibraryItemService implements LibraryItemService {
 
     private final LibraryItemRepository libraryItemRepository;
 
-    public MemoryLibraryItemService(LibraryItemRepository libraryItemRepository) {
-        this.libraryItemRepository = libraryItemRepository;
+    public MemoryLibraryItemService() {
+        this.libraryItemRepository = new LibraryItemRepository();
     }
 
     @Override

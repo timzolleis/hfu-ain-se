@@ -11,8 +11,8 @@ public class MemoryPersonService implements PersonService {
 
     private final PersonRepository personRepository;
 
-    public MemoryPersonService(final PersonRepository personRepository) {
-        this.personRepository = personRepository;
+    public MemoryPersonService() {
+        this.personRepository = new PersonRepository();
     }
 
     @Override
