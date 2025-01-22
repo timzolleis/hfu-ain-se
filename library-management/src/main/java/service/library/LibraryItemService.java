@@ -2,6 +2,7 @@ package service.library;
 
 import entity.libraryitem.LibraryItem;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface LibraryItemService {
@@ -14,4 +15,6 @@ public interface LibraryItemService {
     boolean deleteLibraryItem(int id);
 
     LibraryItem reorderLibraryItem(int id, int quantity);
+
+    List<LibraryItem> getLibraryItems();
 }

@@ -4,6 +4,8 @@ import entity.libraryitem.LibraryItem;
 import entity.libraryitem.LibraryItemRepository;
 import exception.LibraryItemNotFoundException;
 
+import java.util.List;
+
 public class MemoryLibraryItemService implements LibraryItemService {
 
     private final LibraryItemRepository libraryItemRepository;
@@ -35,5 +37,10 @@ public class MemoryLibraryItemService implements LibraryItemService {
     @Override
     public LibraryItem reorderLibraryItem(int id, int quantity) {
         return libraryItemRepository.reorderLibraryItem(id, quantity);
+    }
+
+    @Override
+    public List<LibraryItem> getLibraryItems() {
+        return libraryItemRepository.listLibraryItems();
     }
 }

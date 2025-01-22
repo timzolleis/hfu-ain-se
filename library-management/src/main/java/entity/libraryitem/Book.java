@@ -7,6 +7,8 @@ public class Book implements LibraryItem {
     private String description;
     private int quantity;
 
+    private int stock = quantity;
+
     @Override
     public int getId() {
         return id;
@@ -55,5 +57,15 @@ public class Book implements LibraryItem {
     @Override
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public int getStock() {
+        return stock;
+    }
+
+    @Override
+    public void setStock(final int stock) {
+        this.stock = stock;
     }
 }

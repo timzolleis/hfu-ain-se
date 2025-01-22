@@ -6,6 +6,7 @@ public class Magazine implements LibraryItem {
     private String name;
     private String description;
     private int quantity;
+    private int stock;
 
     @Override
     public int getId() {
@@ -55,5 +56,16 @@ public class Magazine implements LibraryItem {
     @Override
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public int getStock() {
+        return stock;
+    }
+
+    @Override
+    public void setStock(final int stock) {
+        this.stock = stock;
+
     }
 }
